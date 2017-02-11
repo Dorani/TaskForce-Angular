@@ -1,2 +1,6 @@
 angular.module("todoListApp", []);
-.controller('mainCtrl');//creating main controller, we will use just 1
+.controller('mainCtrl', function($scope){
+  $scope.helloworld = function(){
+    console.log("this is the hello world controller function");
+  }
+});//creating main controller, we will use just 1
