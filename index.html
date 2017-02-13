@@ -8,7 +8,7 @@
 <body ng-app="todoListApp">
   <h1> My List </h1>
   <div ng-controller="mainCtrl" class="list">
-   <input type="checkbox" />
+   <input ng-model ="todo.completed" type="checkbox" />
    <label class="editing-label">A sample todo</label>
    <input ng-model= "todo" class="editing-label" type="text" />
 
