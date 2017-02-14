@@ -9,7 +9,7 @@
   <h1> My List </h1>
   <div ng-controller="mainCtrl" class="list">
    <input ng-model ="todo.completed" type="checkbox" />
-   <label class="editing-label" ng-click="helloWorld()">{{todo.name}}</label>
+   <label ng-hide="editing" class="editing-label" ng-click="helloWorld()">{{todo.name}}</label>
    <input ng-model= "todo.name" class="editing-label" type="text" />
 
    <div class="actions">
