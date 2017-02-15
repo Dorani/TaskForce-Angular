@@ -12,3 +12,10 @@ todo list application using angularjs
    -and when it's installed you just navigate into the folder you want to create  a server for and type
   - in the commmand line tool: http-server -o
    -inspect away!
+
+-angularjs directives used: ng-show,ng-hide: explanation in commits while used.
+ - ng-repeat: allows you to repeat html content for items in a js array or obj
+  - i can actually see the ng-model directive updating the scope var in real time. This is a big time saver because you do not have to create and maintain the relationship between the html being edited and the data itself, which in the example case, its an array of objs.
+  - new scopes for each elements in the array, this is because ng repeat creates a new scope for each element in the array and all of these scopes are children of the mainCtrl scope.
+
+  
