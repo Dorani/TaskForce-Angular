@@ -20,3 +20,6 @@ todo list application using angularjs
 
 -ng-blur and ng-class to improve UX:
  - ng-blur corresponds to js blur event: which is fired anytime an input loses focus. If i am typing/editing a task and click outside the element i was currently in, the blur event fires. Clicking outside of the input to stop editing.
+
+ -ng-class uses angular expression to conditionaly apply css classes to html elements.
+  - buttons should be aligned with middle of input when it in edit mode. 
