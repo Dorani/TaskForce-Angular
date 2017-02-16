@@ -11,6 +11,7 @@ angular.module("todoListApp", [])
   this.helloConsole = function(){
     console.log('this is hello console service!');
   }
+  this.getTodos =
 });
 
 
