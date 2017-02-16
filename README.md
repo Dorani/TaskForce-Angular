@@ -40,3 +40,12 @@ todo list application using angularjs
  - the way we use this service is by 1st off defining it as a dependency in the controller
  - to do this we provide the name of the service directly as a parameter in the controller callback function
  - now we can access the services methods as you would any other obj in js.
+
+###services to get data
+ - make a request from a server then wire it to UI.
+ - request fake data
+ - move todos to own file
+ - create a new folder call it mock
+  - good convention to use anytime you have a place that stores data that mocks a server:
+   - test it out: file:///Users/Seif/dev/taskforce/TaskForce-Angular/mock/todos.json
+    - you should see your obj.
