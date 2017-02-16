@@ -1,22 +1,29 @@
 angular.module("todoListApp", [])
-.controller('mainCtrl', function($scope, dataService){
-  $scope.helloConsole = dataService.helloConsole;
-  $scope.learningNgChange = function(){
-    console.log("an input has been changed");
+
+.controller('mainCtrl', function($scope, dataService) {
+  $scope.learningNgChange = function() {
+    console.log("An input changed!");
   };
+
   $scope.helloWorld = dataService.helloWorld;
-  $scope.todos = dataService.getTodos();
-  //creating fake todos array for testing purposes
+
+  dataService.getTodos(function(response)
+  {
+    console.log(response.data);
+    $scope.todos = response.data;
+  });
 
 })
-.service('dataService', function($http){//get request using http provider, in the services arguments
-  this.helloConsole = function(){
-    console.log('this is hello console service!');
+
+.service('dataService', function($http) {
+  this.helloWorld = function() {
+    console.log("This is the data service's method!!");
   };
-  this.getTodos = $http.get('mock/todos.json')//path on server, then method to request, execute code after res is received from sercer
-   .then(function(response){ //annom function callback with a paremeter of reponse received from server
-     return response.data;//todos
-   })
+
+  this.getTodos = function(callback){
+    $http.get('mock/todos.json')
+    .then(callback);
+  };
 });
 
 
