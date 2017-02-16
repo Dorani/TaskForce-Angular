@@ -1,5 +1,6 @@
 angular.module("todoListApp", [])
-.controller('mainCtrl', function($scope){
+.controller('mainCtrl', function($scope, dataService){
+  $scope.helloConsole = dataService.helloConsole;
   $scope.learningNgChange = function(){
     console.log("an input has been changed");
   };
