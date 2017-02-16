@@ -13,7 +13,14 @@ angular.module("todoListApp", [])
     {"name": "code"},
   ]
 })
-.service('');//method chaining, chain methods 1 after the other
+.service('dataService', function(){
+  this.helloConsole = function(){
+    console.log('this is hello console service!');
+  }
+});
+
+
+//method chaining, chain methods 1 after the other
 //define new service with service methods
 //1st parameter is the name of the service
 //2nd parameter is an annom callback function where we store our services methods

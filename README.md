@@ -37,3 +37,6 @@ todo list application using angularjs
 
 ###Setting up a service:
  - directly in app.js after mainCtrl, check it out!
+ - the way we use this service is by 1st off defining it as a dependency in the controller
+ - to do this we provide the name of the service directly as a parameter in the controller callback function
+ - now we can access the services methods as you would any other obj in js.
