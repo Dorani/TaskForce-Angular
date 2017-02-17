@@ -1,21 +1,20 @@
 angular.module("todoListApp", [])
 
-.controller('mainCtrl', function($scope, dataService) {
-  $scope.learningNgChange = function() {
+.controller('mainCtrl', function($scope, dataService){
+  $scope.learningNgChange = function(){
     console.log("An input changed!");
   };
 
   $scope.helloWorld = dataService.helloWorld;
 
-  dataService.getTodos(function(response)
-  {
+  dataService.getTodos(function(response){
     console.log(response.data);
     $scope.todos = response.data;
   });
 
 })
 
-.service('dataService', function($http) {
+.service('dataService', function($http){
   this.helloWorld = function() {
     console.log("This is the data service's method!!");
   };
@@ -24,6 +23,11 @@ angular.module("todoListApp", [])
     $http.get('mock/todos.json')
     .then(callback);
   };
+  this.deleteTodos = function(todo){
+    console.log('the' + todo.name + 'todo has been deleted')
+
+  };
+  
 });
 
 

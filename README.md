@@ -49,3 +49,7 @@ todo list application using angularjs
   - good convention to use anytime you have a place that stores data that mocks a server:
    - test it out: file:///Users/Seif/dev/taskforce/TaskForce-Angular/mock/todos.json
     - you should see your obj.
+
+###Service, save and delete
+ - create 2 methods, deletetodo and savetodo.
+ 
