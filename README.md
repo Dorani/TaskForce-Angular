@@ -52,4 +52,7 @@ todo list application using angularjs
 
 ###Service, save and delete
  - create 2 methods, deletetodo and savetodo.
- 
+ - then we are using index in the html, which is the pos of the current todo in the todos array, ng repeat gives us access to a special var thats available within each element within the ng-repeats local scope, so in each todo, there is a local variable called index, and we can pass that to the delete todo function
+ - jump into the controller, we can use this, right within the function making it the second parameter
+  - use splice method on todos array, and delete just 1.
+  - convention in the view when you are passing it remember to add$
