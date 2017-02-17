@@ -1,8 +1,14 @@
 angular.module("todoListApp", [])
-
+//create a new function call addTodo
+//make it equal to annom callback
+//body of function create new todo to a obj with a single key, name key
+//all i have to do to update the ui is push this object into the scope.todos array and this is because scope.todos is rendered using
+//ng-repeat directive the ui will be refreshed when underlying data is update
+//now wire it to the view
 .controller('mainCtrl', function($scope, dataService) {
-  $scope.learningNgChange = function() {
-    console.log("An input changed!");
+  $scope.addTodo = function(){
+    var todo = {name: "this is a new todo"};
+    $scope.todos.push(todo);
   };
 
   $scope.helloWorld = dataService.helloWorld;
