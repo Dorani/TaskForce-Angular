@@ -1,36 +1,47 @@
 angular.module("todoListApp", [])
 
-.controller('mainCtrl', function($scope, dataService){
-  $scope.learningNgChange = function(){
+.controller('mainCtrl', function($scope, dataService) {
+  $scope.learningNgChange = function() {
     console.log("An input changed!");
   };
 
   $scope.helloWorld = dataService.helloWorld;
 
-  dataService.getTodos(function(response){
-    console.log(response.data);
-    $scope.todos = response.data;
+  dataService.getTodos(function(response) {
+  console.log(response.data);
+  $scope.todos = response.data;
   });
 
-})
+  $scope.deleteTodo = function(todo) {
+    dataService.deleteTodo(todo);
 
-.service('dataService', function($http){
-  this.helloWorld = function() {
-    console.log("This is the data service's method!!");
   };
+  $scope.saveTodo = function(todo) {
+    dataService.saveTodo(todo);
+  };
+})
+.service('dataService', function($http) {
+  this.helloWorld = function() {
+    console.log("This is the data sercies's method!!");
+  };
+
   this.getTodos = function(callback){
     $http.get('mock/todos.json')
-    .then(callback);
+    .then(callback)
   };
-  this.deleteTodos = function(todo){
-    console.log('the' + todo.name + 'todo has been deleted')
+
+  this.deleteTodo = function(todo) {
+    console.log("The " + todo.name + " todo has been deleted!");
+    // other logic
   };
-  this.saveTodos = function(todo){
-    console.log('the' + todo.name + 'todo has been saved');
+
+
+  this.saveTodo = function(todo) {
+    console.log("The " + todo.name + " todo has been saved!");
+    // other logic
   };
+
 });
-
-
 //method chaining, chain methods 1 after the other
 //define new service with service methods
 //1st parameter is the name of the service
@@ -41,3 +52,5 @@ angular.module("todoListApp", [])
 //console log.
 
 //http provider, dependency injection at work again!
+
+//create use of services method we created a function in the scope.
