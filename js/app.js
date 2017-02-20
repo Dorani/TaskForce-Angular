@@ -1,50 +1,6 @@
 angular.module("todoListApp", [])
-.controller('mainCtrl', function($scope, dataService) {
-  $scope.addTodo = function(){
-    var todo = {name: "this is a new todo"};
-
-    $scope.todos.push(todo);
-    console.log("adding works!");
-  };
-
-  $scope.helloWorld = dataService.helloWorld;
-
-  dataService.getTodos(function(response) {
-  console.log(response.data);
-  $scope.todos = response.data;
-  });
-
-  $scope.deleteTodo = function(todo,index) {
-    dataService.deleteTodo(todo);
-    $scope.todos.splice(index, 1);
-  };
-
-  $scope.saveTodo = function(todo) {
-    dataService.saveTodo(todo);
-  };
-})
-.service('dataService', function($http) {
-  this.helloWorld = function() {
-    console.log("This is the data sercies's method!!");
-  };
-
-  this.getTodos = function(callback){
-    $http.get('mock/todos.json')
-    .then(callback)
-  };
-
-  this.deleteTodo = function(todo) {
-    console.log("The " + todo.name + " todo has been deleted!");
-    // other logic
-  };
 
 
-  this.saveTodo = function(todo) {
-    console.log("The " + todo.name + " todo has been saved!");
-    // other logic
-  };
-
-});
 //method chaining, chain methods 1 after the other
 //define new service with service methods
 //1st parameter is the name of the service
