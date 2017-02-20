@@ -56,3 +56,7 @@ todo list application using angularjs
  - jump into the controller, we can use this, right within the function making it the second parameter
   - use splice method on todos array, and delete just 1.
   - convention in the view when you are passing it remember to add$
+
+###Organizing the application
+ - directory structure and files need to be well organized, ie: scaffolding.
+ - store all controllers in 1 directory, directives and services in another.
